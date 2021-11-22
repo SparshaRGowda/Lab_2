@@ -5,6 +5,7 @@ var signup_user = require('./services/userServices/registerUser')
 const get_users = require('./services/userServices/getUsers')
 const auth_user = require('./services/userServices/authUser')
 const auth_restaurant = require('./services/restaurantServices/authRestaurant')
+const add_item = require('./services/restaurantServices/addMenuItem')
 
 var signup_restaurant = require('./services/restaurantServices/registerRestaurant')
 
@@ -50,3 +51,4 @@ handleTopicRequest('get_users', get_users)
 handleTopicRequest('signup_restaurant', signup_restaurant)
 handleTopicRequest('auth_user', auth_user)
 handleTopicRequest('auth_restaurant', auth_restaurant)
+handleTopicRequest('add_item', add_item)

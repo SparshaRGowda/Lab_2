@@ -25,6 +25,14 @@ const restaurantSchema = mongoose.Schema(
     /*rimage: {
       type: String,
     },*/
+    rest_menu: [
+      {
+        dishname: { type: String },
+        dishprice: { type: Number },
+        dishquant: { type: Number },
+        dishtype: { type: String },
+      },
+    ],
   },
   {
     timestamps: true,
