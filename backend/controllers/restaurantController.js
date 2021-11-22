@@ -33,24 +33,21 @@ const registerRestaurant = asyncHandler(async (req, res) => {
   })
 })
 
-const authRestaurant = async (req, res) => {
+const authRestaurant = asyncHandler(async (req, res) => {
+  //console.log(req.userId)
   kafka.make_request('auth_restaurant', req.body, (err, results) => {
     if (err) {
       res.status(500).json({
         error: err,
       })
-    }
-    if (results.error) {
-      res.status(500).json({
-        error: results.error,
-      })
     } else {
-      console.log(results)
-      res.status(201).json({
+      //console.log(results)
+      //res.setHeader('token', 'jwt ' + results.token)
+      res.status(200).send({
         results,
       })
     }
   })
-}
+})
 
 module.exports = { registerRestaurant, authRestaurant }
